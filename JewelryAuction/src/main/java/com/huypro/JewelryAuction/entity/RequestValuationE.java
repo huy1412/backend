@@ -22,7 +22,7 @@ public class RequestValuationE {
     private String description;
 
     @Lob
-    @Column(name = "image", columnDefinition = "BLOB", length = 100000)
+    @Column(name = "image", columnDefinition = "LONGBLOB",length = 100000)
     private byte[] image;
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 

@@ -25,7 +25,8 @@ public class AuctionSessionE {
     private String name;
     @Column(name = "description", length = 1000)
     private String description;
-    @Column(name = "image", columnDefinition = "BLOB")
+    @Lob
+    @Column(name = "image", columnDefinition = "LONGBLOB",length = 100000)
     private byte[] image;
     @Column(name = "status")
     @Enumerated(EnumType.STRING)
