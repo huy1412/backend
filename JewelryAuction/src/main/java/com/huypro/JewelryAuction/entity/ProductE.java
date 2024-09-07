@@ -19,7 +19,7 @@
         @Column
         private String description;
         @Lob
-        @Column(name = "image", columnDefinition = "LONGBLOB",length = 100000)
+        @Column(name = "image", columnDefinition = "LONGBLOB",length = 100000000)
         private byte[] image;
         @OneToOne
         @JoinColumn(name = "RequestValuationE_id")
