@@ -28,6 +28,16 @@ public class RequestValuationControllerImpl implements RequestValuation{
     public List<RequestValuationDTO> ListRequestStateREQUESTED() {
         return serviceRequestValuation.ListRequestStatusREQUESTED();
     }
+    @GetMapping("/detailed{id}")
+    @Override
+    public RequestValuationDTO detailedRequestValuation(@PathVariable("id") Long id ) {
+        return serviceRequestValuation.detailedRequestValuation(id);
+    }
+    @PatchMapping("/changeStatusAccept")
+    @Override
+    public RequestValuationDTO updateStatusRequestValuation(RequestValuationDTO reqValuationDTO) {
+        return serviceRequestValuation.updateStatusRequestValuation(reqValuationDTO);
+    }
 
 }
 

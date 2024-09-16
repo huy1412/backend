@@ -43,4 +43,18 @@ public class ServiceRequestValuationImpl implements ServiceRequestValuation {
         return listStateREQUESTEDDTO;
     }
 
+    @Override
+    public RequestValuationDTO detailedRequestValuation( Long id ) {
+        RequestValuationE requestValuationE =requestR.getReferenceById(id);
+        return RequestValuationM.mapToDTO(requestValuationE);
+    }
+
+    @Override
+    public RequestValuationDTO updateStatusRequestValuation(RequestValuationDTO reqValuationDTO) {
+       reqValuationDTO.setStatus(RequestValuationStatus.ACCEPT);
+       RequestValuationE requestValuation = RequestValuationM.mapToEntity(reqValuationDTO);
+       requestR.save(requestValuation);
+        return RequestValuationM.mapToDTO(requestValuation);
+    }
+
 }
